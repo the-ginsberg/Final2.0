@@ -19,4 +19,9 @@ class NewsfeedController < ApplicationController
 
   def destroy
   end
+
+private
+
+
+
 end
