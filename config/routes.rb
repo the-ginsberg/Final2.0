@@ -5,7 +5,10 @@ Rails.application.routes.draw do
   post 'dashboards' => 'dashboard#create'
   post 'dashboards/create'
   get 'dashboard/edit'
-  resources :dashboard
+  resources :dashboard do
+    resources :newsfeed
+  end
+
   devise_for :users
   root 'user#home'
 end
