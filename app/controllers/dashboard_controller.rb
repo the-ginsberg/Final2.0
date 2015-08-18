@@ -28,6 +28,14 @@ class DashboardController < ApplicationController
     end
   end
 
+  def destroy
+    @dashboard = Dashboard.find(params[:id])
+    if @dashboard.present?
+      @dashboard.destroy
+    end
+    redirect_to dashboard_index_path
+  end
+
   private
   # Never trust parameters from the scary internet, only allow the white list through.
   def dashboard_params
