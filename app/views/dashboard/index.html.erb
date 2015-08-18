@@ -1,2 +1,18 @@
 <h1>Dashboard#index</h1>
 <p>Find me in app/views/dashboard/index.html.erb</p>
+
+
+<tbody>
+  <% @dashboards.each do |dashboard| %>
+    <tr>
+      <% @user = current_user %>
+      <% if @user.id == dashboard.user_id %>
+      <td><%= dashboard.name %></td>
+      <td><%= link_to 'Show', dashboard %></td>
+      <td><%= link_to 'Edit', edit_dashboard_path(dashboard) %></td>
+      <td><%= link_to 'Destroy', dashboard, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      <% else %>
+      <% end %>
+    </tr>
+  <% end %>
+</tbody>
