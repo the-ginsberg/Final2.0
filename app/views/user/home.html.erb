@@ -1,1 +1,7 @@
 User Home
+
+<% if user_signed_in? %>
+  <div>signed in!</div>
+  <% else %>
+  <div>You are not currently signed in.</div>
+<% end %>
