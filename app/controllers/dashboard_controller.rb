@@ -1,9 +1,14 @@
 class DashboardController < ApplicationController
+  before_action :set_dashboard, only: [:show, :edit, :update, :destroy]
+
   def index
     @dashboards = Dashboard.all
   end
 
   def show
+    @newsfeed = Newsfeed.new
+    @newsfeeds = Newsfeed.all
+
   end
 
   def new
@@ -38,6 +43,11 @@ class DashboardController < ApplicationController
 
   private
   # Never trust parameters from the scary internet, only allow the white list through.
+
+  def set_dashboard
+    @dashboard = Dashboard.find(params[:id])
+  end
+
   def dashboard_params
     params.require(:dashboard).permit(:name, :user_id, :dashboard_id)
   end

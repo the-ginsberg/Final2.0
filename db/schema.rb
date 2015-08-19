@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150818222527) do
+ActiveRecord::Schema.define(version: 20150819005951) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,11 +25,10 @@ ActiveRecord::Schema.define(version: 20150818222527) do
 
   create_table "newsfeeds", force: :cascade do |t|
     t.string   "title"
-    t.integer  "dash_id"
+    t.text     "body"
     t.integer  "dashboard_id"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
-    t.text     "body"
   end
 
   add_index "newsfeeds", ["dashboard_id"], name: "index_newsfeeds_on_dashboard_id", using: :btree
