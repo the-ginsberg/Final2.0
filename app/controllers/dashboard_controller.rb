@@ -49,7 +49,7 @@ class DashboardController < ApplicationController
   end
 
   def dashboard_params
-    params.require(:dashboard).permit(:name, :user_id, :dashboard_id)
+    params.require(:dashboard).permit(:name, :user_id, :dashboard_id, :access_key)
   end
 
 
