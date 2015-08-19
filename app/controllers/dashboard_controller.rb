@@ -1,5 +1,6 @@
 class DashboardController < ApplicationController
   before_action :set_dashboard, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
 
   def index
     @dashboards = Dashboard.all

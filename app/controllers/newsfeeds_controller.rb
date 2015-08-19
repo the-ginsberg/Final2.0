@@ -1,6 +1,7 @@
 class NewsfeedsController < ApplicationController
   before_action :set_newsfeed, only: [:show, :edit, :update, :destroy]
   before_action :set_dashboard, only: [:create, :new, :index]
+  before_action :authenticate_user!
 
   # GET /newsfeeds
   # GET /newsfeeds.json
